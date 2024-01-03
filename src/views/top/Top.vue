@@ -7,6 +7,7 @@ import { headData } from "./data.js";
 useHead({
   title: headData.title,
   meta: [{ property: "og:title", content: headData.title }],
+  link: [{ rel: "stylesheet", href: headData.font }],
 });
 </script>
 
