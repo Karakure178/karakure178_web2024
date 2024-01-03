@@ -1,0 +1,94 @@
+// ===========================================
+// mixinの設定
+// ===========================================
+@use 'sass:map';
+
+// -------------------------------------------
+// hoverとactiveが共通内容の時同時に記述できるようにする
+// -------------------------------------------
+@mixin hover-and-active {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+
+  @media (hover: none) {
+    &:active {
+      @content;
+    }
+  }
+}
+
+// -------------------------------------------
+// ブレイクポイントの設定
+// -------------------------------------------
+
+// ---------------------------------------------------------------
+// XL:     pc  ~
+// L : tablet  ~  pc - 1
+// M : mobile  ~  tablet - 1
+// S :         ~  mobile - 1
+// ---------------------------------------------------------------
+$breakpoints: (
+  pc: 1025px,
+  tablet: 769px,
+  mobile: 375px
+);
+
+@mixin screen($bp-min, $bp-max) {
+  @media screen and (min-width: map.get($breakpoints, $bp-min)) and (max-width: map.get($breakpoints, $bp-max) - 1px) {
+    @content;
+  }
+}
+
+@mixin max-screen($bp) {
+  @media screen and (max-width: map.get($breakpoints, $bp) - 1px) {
+    @content;
+  }
+}
+
+@mixin min-screen($bp) {
+  @media screen and (min-width: map.get($breakpoints, $bp)) {
+    @content;
+  }
+}
+
+@mixin S-M() {
+  @include max-screen(tablet) {
+    @content;
+  }
+}
+
+@mixin L-XL() {
+  @include min-screen(tablet) {
+    @content;
+  }
+}
+
+/* stylelint-disable-next-line */
+@mixin MQ-UP($minBp) {
+  @if type-of($minBp) == number and $minBp > 0 {
+    @media screen and (min-width: #{$minBp}px) {
+      @content;
+    }
+  }
+}
+
+/* stylelint-disable-next-line */
+@mixin MQ-DOWN($maxBp) {
+  @if type-of($maxBp) == number and $maxBp > 0 {
+    @media screen and (max-width: #{$maxBp}px) {
+      @content;
+    }
+  }
+}
+
+/* stylelint-disable-next-line */
+@mixin MQ-BETWEEN($minBp, $maxBp) {
+  @if type-of($minBp) == number and type-of($maxBp) == number and $minBp < $maxBp {
+    @media screen and (min-width: #{$minBp}px) and (max-width: #{$maxBp}px) {
+      @content;
+    }
+  }
+}

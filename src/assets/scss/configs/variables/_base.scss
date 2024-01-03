@@ -1,0 +1,39 @@
+@use "../atrules/mixin" as *;
+@use "./easing" as *;
+
+// ===========================================
+// 全体共通用
+// bodyの設定など
+// ===========================================
+
+// -------------------------------------------
+// html
+// -------------------------------------------
+html {
+  height: 100vh;
+}
+
+// 横スクロール対策
+// safari対策用
+.html__overhidden {
+  overflow-x: auto;
+}
+
+// 横スクロール対策
+.body__overhidden {
+  overflow-x: hidden;
+}
+
+// modal等スクロール処理回避用(sp)
+.fixed__body {
+  @include S-M {
+    position: fixed;
+    left: 0;
+    width: 100%;
+  }
+}
+
+// アニメーション用opacity
+.animation__opacity {
+  transition: opacity 0.3s, visibility 0.3s $ease-out;
+}
