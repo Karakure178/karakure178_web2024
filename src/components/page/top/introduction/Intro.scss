@@ -1,0 +1,23 @@
+.introduction {
+  height: 100vh;
+  background-color: "#DCDCDC";
+}
+
+.introduction__inner {
+}
+
+.introduction__name,
+.introduction__job {
+  font-weight: 400;
+  color: #000;
+}
+
+.introduction__name {
+  margin-bottom: 10px;
+  font-size: 150px;
+}
+
+.introduction__job {
+  margin-bottom: 10px;
+  font-size: 90px;
+}
