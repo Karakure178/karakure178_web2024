@@ -1,6 +1,13 @@
 <script setup>
+import { useHead } from "unhead";
+
 import Introduction from "./../../components/page/top/introduction/Intro.vue";
-//from "../components/page/top/Introduction.vue";
+import { headData } from "./data.js";
+
+useHead({
+  title: headData.title,
+  meta: [{ property: "og:title", content: headData.title }],
+});
 </script>
 
 <template>
