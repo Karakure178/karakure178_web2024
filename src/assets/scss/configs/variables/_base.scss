@@ -1,5 +1,6 @@
 @use "../atrules/mixin" as *;
 @use "./easing" as *;
+@use "./font" as *;
 
 // ===========================================
 // 全体共通用
@@ -11,6 +12,7 @@
 // -------------------------------------------
 html {
   height: 100vh;
+  font-family: $baseFont;
 }
 
 // 横スクロール対策
@@ -35,5 +37,7 @@ html {
 
 // アニメーション用opacity
 .animation__opacity {
-  transition: opacity 0.3s, visibility 0.3s $ease-out;
+  transition:
+    opacity 0.3s,
+    visibility 0.3s $ease-out;
 }
