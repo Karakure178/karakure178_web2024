@@ -1,0 +1,52 @@
+@use "./../../../../assets/scss/configs/index" as *;
+
+.scrollNav {
+}
+
+.scrollNav__list {
+}
+
+.scrollNav__item {
+  @include L-XL {
+    height: 3px;
+    margin-bottom: 40px;
+  }
+
+  :last-child {
+    @include L-XL {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.scrollNavItem__link {
+  position: relative;
+  display: block;
+
+  @include L-XL {
+    width: 24px;
+    height: 100%;
+    cursor: pointer;
+    background-color: #fff;
+    transition: background-color 0.1s ease-in-out;
+  }
+
+  span {
+    @include L-XL {
+      position: absolute;
+      z-index: 1;
+      width: 4px;
+      height: 4px;
+      transition: width 0.1s ease-in-out;
+    }
+  }
+
+  &.is-active {
+    span {
+      @include L-XL {
+        width: 12px;
+        height: 12px;
+      }
+    }
+  }
+}
