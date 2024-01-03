@@ -1,6 +1,14 @@
 @use "./../../../../assets/scss/configs/index" as *;
 
 .scrollNav {
+  position: fixed;
+  z-index: 1;
+
+  @include L-XL {
+    top: 50%;
+    left: 90px;
+    transform: translateY(-50%);
+  }
 }
 
 .scrollNav__list {
