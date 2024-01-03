@@ -6,20 +6,51 @@
 }
 
 .introduction__inner {
+  padding-top: 229px;
+
+  @include L-XL {
+    max-width: 1280px;
+    padding-left: 90px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @include S-M {
+    padding-left: 20px;
+  }
 }
 
 .introduction__name,
 .introduction__job {
+  font-family: $abrilFatface;
   font-weight: 400;
-  color: #000;
+
+  @include S-M {
+    text-align: center;
+  }
 }
 
 .introduction__name {
-  margin-bottom: 10px;
-  font-size: 150px;
+  color: #000;
+
+  @include L-XL {
+    font-size: 150px;
+  }
+
+  @include S-M {
+    font-size: 60px;
+  }
 }
 
 .introduction__job {
   margin-bottom: 10px;
-  font-size: 90px;
+  color: #6b7280;
+
+  @include L-XL {
+    font-size: 90px;
+  }
+
+  @include S-M {
+    font-size: 20px;
+  }
 }
