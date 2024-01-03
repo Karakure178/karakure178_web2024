@@ -1,22 +1,21 @@
 // ===========================================
 // mixinとfunctionを読み込む
 // ===========================================
-@forward './atrules/functions';
-@forward './atrules/mixin';
+@forward "./atrules/functions";
+@forward "./atrules/mixin";
 
 // ===========================================
 // easingとcolorを読み込む
 // ===========================================
-@forward './variables/easing';
-@forward './variables/color';
+@forward "./variables/easing";
+@forward "./variables/color";
 
 // ===========================================
 // fontを読み込む
 // ===========================================
-@forward './variables/font';
+@forward "./variables/font";
 
 // ===========================================
 // 全体共通設定を読み込む
 // ===========================================
-@forward './variables/base';
-@use '../../../node_modules/destyle.css/destyle.css';
+@forward "./variables/base";

@@ -1,6 +1,8 @@
+@use "../../../../assets/scss/configs/index" as *;
+
 .introduction {
   height: 100vh;
-  background-color: "#DCDCDC";
+  background-color: #dcdcdc;
 }
 
 .introduction__inner {
