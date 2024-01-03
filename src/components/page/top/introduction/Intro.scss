@@ -6,10 +6,10 @@
 }
 
 .introduction__inner {
-  padding-top: 229px;
-
   @include L-XL {
     max-width: 1280px;
+    padding-top: 315px; // TODO header込み、要修正
+    padding-right: 90px;
     padding-left: 90px;
     margin-right: auto;
     margin-left: auto;
@@ -34,7 +34,8 @@
   color: #000;
 
   @include L-XL {
-    font-size: 150px;
+    font-size: 160px;
+    line-height: calc(216 / 160);
   }
 
   @include S-M {
@@ -43,10 +44,10 @@
 }
 
 .introduction__job {
-  margin-bottom: 10px;
   color: #6b7280;
 
   @include L-XL {
+    margin-top: 38px;
     font-size: 90px;
   }
 
