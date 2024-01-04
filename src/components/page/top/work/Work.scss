@@ -1,0 +1,90 @@
+@use "../../../../assets/scss/configs/index" as *;
+
+// ===========================================
+// work 全体設定
+// ===========================================
+.work {
+  height: 100vh;
+  background-color: #dcdcdc;
+
+  @include L-XL {
+    max-height: 1080px;
+  }
+}
+
+.work__inner {
+  @include L-XL {
+    position: relative;
+    max-width: 1280px;
+    padding-right: 90px;
+    padding-left: 90px;
+    margin-top: 132px; // TODO header込み、要修正
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @include S-M {
+    padding-left: 20px;
+  }
+}
+
+.work__heading {
+  font-family: $abrilFatface;
+  font-weight: 400;
+  color: #000;
+
+  @include L-XL {
+    font-size: 120px;
+    line-height: calc(162 / 120);
+  }
+
+  @include S-M {
+    font-size: 60px;
+  }
+}
+
+// -------------------------------------------
+// 説明リスト
+// -------------------------------------------
+.aboutText__likes {
+  @include L-XL {
+    padding-top: 70px;
+    font-size: 60px;
+    line-height: calc(80 / 60);
+  }
+
+  @include S-M {
+    font-size: 20px;
+  }
+}
+
+.aboutText__likesExplanation {
+  @include L-XL {
+    padding-top: 20px;
+    padding-left: 107px;
+    font-size: 48px;
+    line-height: calc(65 / 48);
+  }
+
+  @include S-M {
+    font-size: 12px;
+  }
+}
+
+// -------------------------------------------
+// 自分のアイコン
+// -------------------------------------------
+.about__icon {
+  @include L-XL {
+    position: absolute;
+    top: calc(50% + 130px);
+    right: 38px;
+    width: 404px;
+    transform: translateY(-50%);
+  }
+
+  img {
+    width: 100%;
+    border-radius: 50%;
+  }
+}

@@ -4,6 +4,7 @@ import { ref } from "vue";
 
 import About from "./../../components/page/top/about/About.vue";
 import Introduction from "./../../components/page/top/introduction/Intro.vue";
+import Work from "./../../components/page/top/work/Work.vue";
 import ScrollNav from "./../../components/ui/scroll/scrollNav/ScrollNav.vue";
 import { headData, topData } from "./data.js";
 
@@ -20,6 +21,7 @@ const sectionList = ref(topData.scrollNav);
   <main>
     <Introduction />
     <About />
+    <Work />
     <ScrollNav :sections="sectionList" />
   </main>
 </template>
