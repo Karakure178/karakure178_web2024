@@ -4,6 +4,9 @@
 // header 全体設定
 // ===========================================
 .header {
+  position: fixed;
+  z-index: 1000;
+  width: 100vw;
   background-color: #000;
 
   @include L-XL {
