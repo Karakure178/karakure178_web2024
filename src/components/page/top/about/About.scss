@@ -28,15 +28,11 @@
   }
 }
 
-.about__heading,
-.aboutText__likes,
-.aboutText__likesExplanation {
+.about__heading {
   font-family: $abrilFatface;
   font-weight: 400;
   color: #000;
-}
 
-.about__heading {
   @include L-XL {
     font-size: 120px;
     line-height: calc(162 / 120);
@@ -47,31 +43,25 @@
   }
 }
 
-// -------------------------------------------
-// 説明リスト
-// -------------------------------------------
-.aboutText__likes {
-  @include L-XL {
-    padding-top: 70px;
-    font-size: 60px;
-    line-height: calc(80 / 60);
+.about__explantion {
+  @include MQ-BETWEEN(769, 1174) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   @include S-M {
-    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
-.aboutText__likesExplanation {
-  @include L-XL {
-    padding-top: 20px;
-    padding-left: 107px;
-    font-size: 48px;
-    line-height: calc(65 / 48);
-  }
-
-  @include S-M {
-    font-size: 12px;
+.about__text {
+  @include MQ-BETWEEN(769, 1174) {
+    display: flex;
+    flex-direction: column;
+    width: 365px;
   }
 }
 
@@ -80,11 +70,22 @@
 // -------------------------------------------
 .about__icon {
   @include L-XL {
+  }
+
+  @include MQ-BETWEEN(769, 1174) {
+    width: 350px;
+  }
+
+  @include MQ-UP(1175) {
     position: absolute;
     top: calc(50% + 130px);
     right: 38px;
     width: 404px;
     transform: translateY(-50%);
+  }
+
+  @include S-M {
+    width: 202px;
   }
 
   img {

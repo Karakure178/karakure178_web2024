@@ -1,0 +1,45 @@
+@use "../../../../assets/scss/configs/index" as *;
+
+// -------------------------------------------
+// 説明リスト
+// -------------------------------------------
+.aboutText__likes,
+.aboutText__likesExplanation {
+  font-family: $abrilFatface;
+  font-weight: 400;
+  color: #000;
+}
+
+.aboutText__likes {
+  @include MQ-BETWEEN(769, 1174) {
+    padding-top: 35px;
+    font-size: 40px;
+  }
+
+  @include MQ-UP(1175) {
+    padding-top: 70px;
+    font-size: 60px;
+  }
+
+  @include S-M {
+    font-size: 20px;
+  }
+}
+
+.aboutText__likesExplanation {
+  @include MQ-BETWEEN(769, 1174) {
+    align-self: center;
+    padding-top: 10px;
+    font-size: 30px;
+  }
+
+  @include MQ-UP(1175) {
+    padding-top: 20px;
+    padding-left: 107px;
+    font-size: 48px;
+  }
+
+  @include S-M {
+    font-size: 12px;
+  }
+}
