@@ -1,5 +1,58 @@
-.aboutText__likesExplanation {
+@use "../../../../assets/scss/configs/index" as *;
+
+// -------------------------------------------
+// 説明リスト
+// -------------------------------------------
+.work__explantion {
   font-family: $abrilFatface;
   font-weight: 400;
   color: #000;
+}
+
+.workExplantion__title {
+  @include L-XL {
+    padding-top: 70px;
+    font-size: 60px;
+    line-height: calc(80 / 60);
+  }
+
+  @include S-M {
+    font-size: 20px;
+  }
+}
+
+.workExplantion__titleText {
+  @include L-XL {
+    padding-top: 70px;
+    font-size: 48px;
+    line-height: calc(65 / 48);
+  }
+
+  @include S-M {
+    font-size: 16px;
+  }
+}
+
+.workExplantion__date {
+  @include L-XL {
+    padding-top: 70px;
+    font-size: 60px;
+    line-height: calc(80 / 60);
+  }
+
+  @include S-M {
+    font-size: 20px;
+  }
+}
+
+.workExplantion__dateText {
+  @include L-XL {
+    padding-top: 70px;
+    font-size: 48px;
+    line-height: calc(65 / 48);
+  }
+
+  @include S-M {
+    font-size: 16px;
+  }
 }
