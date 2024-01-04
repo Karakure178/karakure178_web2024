@@ -1,28 +1,42 @@
 @use "../../../../assets/scss/configs/index" as *;
 
 .commonButton {
+  display: flex;
+  justify-content: center;
   font-family: $abrilFatface;
   background-color: #000;
-  border: 1px solid #000;
+  border: 2px solid #000;
   border-radius: 3px;
-  transition:
-    background-color 0.3s ease-out,
-    border 0.3s ease-out;
+  transition: background-color 0.3s ease-out;
+
+  @include L-XL {
+    width: 243px;
+    height: 80px;
+    padding-top: 8px;
+  }
+
+  @include S-M {
+    width: 129px;
+    height: 44px;
+  }
 
   & span {
     color: #dcdcdc;
-    text-align: center;
     transition: color 0.3s ease-out;
 
     @include L-XL {
-      font-size: 48px;
+      font-size: 44px;
+      line-height: calc(60 / 44);
+    }
+
+    @include S-M {
+      font-size: 20px;
       line-height: calc(27 / 20);
     }
   }
 
   @include hover-and-active {
-    background-color: #dcdcdc;
-    border: 1px solid #dcdcdc;
+    background-color: #707070;
 
     & span {
       color: #000;
