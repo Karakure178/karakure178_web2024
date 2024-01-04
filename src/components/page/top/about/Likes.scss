@@ -22,7 +22,7 @@
   }
 
   @include S-M {
-    font-size: 20px;
+    font-size: 30px;
   }
 }
 
@@ -40,6 +40,7 @@
   }
 
   @include S-M {
-    font-size: 12px;
+    align-self: center;
+    font-size: 20px;
   }
 }

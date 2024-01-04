@@ -15,7 +15,7 @@
   }
 
   @include S-M {
-    text-align: center;
+    font-size: 30px;
   }
 }
 
@@ -53,10 +53,10 @@
 
 .aboutText__link {
   display: block;
+  width: 38px;
+  height: 38px;
 
   @include L-XL {
-    width: 38px;
-    height: 38px;
   }
 
   @include S-M {
