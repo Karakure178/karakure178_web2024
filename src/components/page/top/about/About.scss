@@ -6,6 +6,10 @@
 .about {
   height: 100vh;
   background-color: #fff;
+
+  @include L-XL {
+    max-height: 1080px;
+  }
 }
 
 .about__inner {
