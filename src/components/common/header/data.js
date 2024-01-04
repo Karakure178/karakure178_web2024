@@ -1,17 +1,17 @@
 export const headerData = {
-  logoUrl: 'src/assets/images/common/header/icon.png',
+  logoUrl: "src/assets/image/common/header/icon.svg",
   navigationList: [
     {
-      title: 'HOME',
-      link: '',
+      title: "HOME",
+      link: "",
     },
     {
-      title: 'ABOUT',
-      link: 'about',
+      title: "ABOUT",
+      link: "about",
     },
     {
-      title: 'MODAL',
-      link: 'modal',
+      title: "MODAL",
+      link: "modal",
     },
   ],
-}
+};

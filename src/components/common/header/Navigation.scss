@@ -1,0 +1,26 @@
+@use "./../../../assets/scss/configs/index" as *;
+
+// ===========================================
+// nav 全体設定
+// ===========================================
+.headerNavigation {
+  @include L-XL {
+    height: 86px;
+  }
+
+  @include S-M {
+    display: none;
+  }
+
+  &.headerNavigation--active {
+  }
+}
+
+.headerNavigation__list {
+}
+
+.headerNavigation__item {
+}
+
+.headerNavigation__link {
+}

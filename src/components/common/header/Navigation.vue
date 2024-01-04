@@ -1,12 +1,12 @@
 <script setup>
-import { ref } from 'vue'
+import { ref } from "vue";
 
-import { useHamburgerStore } from '../../../stores/isOpen'
+import { useHamburgerStore } from "../../../stores/isOpen";
 
-import { headerData } from './data.js'
+import { headerData } from "./data.js";
 
-const items = ref(headerData.navigationList)
-const store = useHamburgerStore()
+const items = ref(headerData.navigationList);
+const store = useHamburgerStore();
 </script>
 
 <template>
@@ -14,12 +14,12 @@ const store = useHamburgerStore()
     class="headerNavigation"
     :class="{
       'headerNavigation--active': store.isOpen,
-      animation__opacity: store.isOpen
+      animation__opacity: store.isOpen,
     }"
   >
     <ul class="headerNavigation__list">
-      <li v-for="item in items" :key="item.id" class="headerNavigationList__item">
-        <a class="headerNavigation__list--link" :href="item.link">
+      <li v-for="item in items" :key="item.id" class="headerNavigation__item">
+        <a class="headerNavigation__link" :href="item.link">
           {{ item.title }}
         </a>
       </li>
@@ -28,5 +28,5 @@ const store = useHamburgerStore()
 </template>
 
 <style lang="scss" scoped>
-@use './Navigation.scss';
+@use "./Navigation.scss";
 </style>

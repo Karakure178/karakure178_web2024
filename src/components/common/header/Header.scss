@@ -1,0 +1,32 @@
+@use "./../../../assets/scss/configs/index" as *;
+
+// ===========================================
+// header 全体設定
+// ===========================================
+.header {
+  background-color: #000;
+
+  @include L-XL {
+    height: 86px;
+  }
+
+  @include S-M {
+    height: 48px;
+  }
+}
+
+.header__inner {
+  @include L-XL {
+    position: relative;
+    max-width: 1280px;
+    height: 100%;
+    padding-right: 90px;
+    padding-left: 90px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @include S-M {
+    padding-left: 20px;
+  }
+}

@@ -1,0 +1,24 @@
+@use "./../../../assets/scss/configs/index" as *;
+
+// ===========================================
+// nav 全体設定
+// ===========================================
+.header__logo {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  @include L-XL {
+    width: 60px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+  }
+
+  @include S-M {
+    display: none;
+  }
+
+  img {
+    width: 100%;
+  }
+}
