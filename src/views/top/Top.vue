@@ -2,6 +2,7 @@
 import { useHead } from "unhead";
 import { ref } from "vue";
 
+// import Loading from "./../../components/common/animation/Loading.vue";
 import Header from "./../../components/common/header/Header.vue";
 import About from "./../../components/page/top/about/About.vue";
 import Articles from "./../../components/page/top/articles/Articles.vue";
@@ -20,6 +21,7 @@ const sectionList = ref(topData.scrollNav);
 </script>
 
 <template>
+  <!-- <Loading /> -->
   <Header />
   <main>
     <Introduction />
