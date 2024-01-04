@@ -1,5 +1,5 @@
 export const workData = {
-  commonUrl: "src/assets/image/top/work/",
+  commonUrl: "src/assets/image/parts/work/",
   work: [
     {
       title: "Colorful shapes!",

@@ -1,13 +1,21 @@
 <script setup>
 import { ref } from "vue";
 
-import { workData } from "./data.js";
-
-const items = ref(workData.work);
+// TODO カルーセル対応のためにdefinePropsに変更する
+const item = defineProps({
+  title: {
+    type: String,
+    required: true,
+  },
+  date: {
+    type: String,
+    required: true,
+  },
+});
 </script>
 
 <template>
-  <dl v-for="item in items" :key="item.id" class="work__explantion">
+  <dl class="work__explantion">
     <dt class="workExplantion__title">Title:</dt>
     <dd class="workExplantion__titleText">{{ item.title }}</dd>
     <dt class="workExplantion__date">Date:</dt>

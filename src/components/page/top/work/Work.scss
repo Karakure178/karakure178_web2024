@@ -43,6 +43,18 @@
   }
 }
 
+.work__button {
+  @include L-XL {
+    margin-top: 48px;
+    margin-left: 131px;
+  }
+
+  @include S-M {
+    margin-top: 48px;
+    margin-left: 131px;
+  }
+}
+
 // -------------------------------------------
 // 作品の画像
 // -------------------------------------------
@@ -50,13 +62,14 @@
   @include L-XL {
     position: absolute;
     top: calc(50% + 130px);
-    right: 38px;
-    width: 404px;
+    right: 12px;
+    width: 564px;
+    margin-top: 59px;
+    box-shadow: -30px 30px 6px rgb(0 0 0 / 16%);
     transform: translateY(-50%);
   }
 
   img {
     width: 100%;
-    border-radius: 50%;
   }
 }
