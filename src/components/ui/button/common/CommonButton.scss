@@ -1,0 +1,31 @@
+@use "../../../../assets/scss/configs/index" as *;
+
+.commonButton {
+  font-family: $abrilFatface;
+  background-color: #000;
+  border: 1px solid #000;
+  border-radius: 3px;
+  transition:
+    background-color 0.3s ease-out,
+    border 0.3s ease-out;
+
+  & span {
+    color: #dcdcdc;
+    text-align: center;
+    transition: color 0.3s ease-out;
+
+    @include L-XL {
+      font-size: 48px;
+      line-height: calc(27 / 20);
+    }
+  }
+
+  @include hover-and-active {
+    background-color: #dcdcdc;
+    border: 1px solid #dcdcdc;
+
+    & span {
+      color: #000;
+    }
+  }
+}
