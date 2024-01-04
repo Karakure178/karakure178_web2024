@@ -1,6 +1,8 @@
 <script setup>
 import { ref } from "vue";
 
+import ReadButton from "../../../ui/button/common/CommonButton.vue";
+
 import Explantion from "./Explantion.vue";
 </script>
 
@@ -10,8 +12,11 @@ import Explantion from "./Explantion.vue";
       <h2 class="work__heading">Work</h2>
       <div class="work__carousel">
         <Explantion />
-        <!-- TODO 要修正 共通コンポーネントから引っ張り出す -->
-        <button class="work__codeButton">read code</button>
+        <ReadButton
+          href="https://translate.google.com/"
+          class-name="work__button"
+          button-text="read code"
+        />
         <div class="work__image">
           <img :src="myicon" alt="自分のicon" />
         </div>
