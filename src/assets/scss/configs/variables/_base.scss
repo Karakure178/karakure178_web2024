@@ -15,6 +15,11 @@ html {
   font-family: $baseFont;
 }
 
+// なぜかdestyleにてdtが初期値:boldになっているので上書き
+dt {
+  font-weight: normal;
+}
+
 // 横スクロール対策
 // safari対策用
 .html__overhidden {
