@@ -23,7 +23,8 @@
 
 .workExplantion__titleText {
   @include L-XL {
-    padding-top: 70px;
+    padding-top: 2px;
+    padding-left: 131px;
     font-size: 48px;
     line-height: calc(65 / 48);
   }
@@ -35,7 +36,7 @@
 
 .workExplantion__date {
   @include L-XL {
-    padding-top: 70px;
+    padding-top: 42px;
     font-size: 60px;
     line-height: calc(80 / 60);
   }
@@ -47,7 +48,8 @@
 
 .workExplantion__dateText {
   @include L-XL {
-    padding-top: 70px;
+    padding-top: 2px;
+    padding-left: 131px;
     font-size: 48px;
     line-height: calc(65 / 48);
   }
