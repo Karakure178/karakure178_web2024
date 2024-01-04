@@ -16,9 +16,9 @@
   @include L-XL {
     position: relative;
     max-width: 1280px;
+    padding-top: 132px; // TODO header込み、要修正
     padding-right: 90px;
     padding-left: 90px;
-    margin-top: 132px; // TODO header込み、要修正
     margin-right: auto;
     margin-left: auto;
   }
