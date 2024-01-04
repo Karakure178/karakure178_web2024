@@ -1,0 +1,54 @@
+@use "../../../../assets/scss/configs/index" as *;
+
+.aboutText__likes {
+  font-family: $abrilFatface;
+  font-weight: 400;
+
+  @include L-XL {
+    padding-top: 26px;
+    font-size: 60px;
+    line-height: calc(80 / 60);
+  }
+
+  @include S-M {
+    text-align: center;
+  }
+}
+
+.aboutText__likesGroup {
+  @include L-XL {
+    padding-top: 15px;
+  }
+
+  @include S-M {
+    padding-top: 20px;
+  }
+}
+
+.aboutText__likesIcon {
+  display: inline-block;
+
+  &:first-of-type {
+    margin-left: 131px;
+  }
+
+  &:not(:first-of-type) {
+    margin-left: 29px;
+  }
+}
+
+.aboutText__link {
+  display: block;
+
+  @include L-XL {
+    width: 38px;
+    height: 38px;
+  }
+
+  @include S-M {
+  }
+
+  img {
+    width: 100%;
+  }
+}

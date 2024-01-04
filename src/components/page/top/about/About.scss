@@ -1,0 +1,72 @@
+@use "../../../../assets/scss/configs/index" as *;
+
+.about {
+  height: 100vh;
+  background-color: #fff;
+}
+
+.about__inner {
+  @include L-XL {
+    max-width: 1280px;
+    padding-top: 132px; // TODO header込み、要修正
+    padding-right: 90px;
+    padding-left: 90px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @include S-M {
+    padding-left: 20px;
+  }
+}
+
+.about__heading,
+.aboutText__likes,
+.aboutText__likesExplanation {
+  font-family: $abrilFatface;
+  font-weight: 400;
+  color: #000;
+}
+
+.about__heading,
+.aboutText__likes {
+  @include S-M {
+    text-align: center;
+  }
+}
+
+.about__heading {
+  @include L-XL {
+    font-size: 120px;
+    line-height: calc(162 / 120);
+  }
+
+  @include S-M {
+    font-size: 60px;
+  }
+}
+
+.aboutText__likes {
+  @include L-XL {
+    padding-top: 70px;
+    font-size: 60px;
+    line-height: calc(80 / 60);
+  }
+
+  @include S-M {
+    font-size: 20px;
+  }
+}
+
+.aboutText__likesExplanation {
+  @include L-XL {
+    padding-top: 20px;
+    padding-left: 107px;
+    font-size: 48px;
+    line-height: calc(65 / 48);
+  }
+
+  @include S-M {
+    font-size: 12px;
+  }
+}
