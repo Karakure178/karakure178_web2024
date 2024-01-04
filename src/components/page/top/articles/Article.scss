@@ -1,0 +1,64 @@
+@use "../../../../assets/scss/configs/index" as *;
+
+// -------------------------------------------
+// 記事一覧
+// -------------------------------------------
+.articles__list {
+  @include L-XL {
+  }
+
+  @include S-M {
+  }
+}
+
+.articlesList__item {
+  margin-bottom: 10px;
+}
+
+.articlesList__link {
+  border: solid 1px #000;
+  border-radius: 4px;
+
+  @include L-XL {
+    display: flex;
+    padding-top: 23px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+
+    img {
+      width: 24px;
+      height: 100%;
+    }
+  }
+}
+
+.articlesList__group {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.articlesList__title,
+.articlesList__date {
+  font-family: $baseFont;
+}
+
+.articlesList__title {
+  font-weight: 700;
+  color: #000;
+
+  @include L-XL {
+    font-size: 16px;
+  }
+}
+
+.articlesList__date {
+  font-weight: 400;
+  color: #6b7280;
+
+  @include L-XL {
+    padding-top: 12px;
+    font-size: 14px;
+  }
+}

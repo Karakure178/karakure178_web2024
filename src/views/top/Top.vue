@@ -3,6 +3,7 @@ import { useHead } from "unhead";
 import { ref } from "vue";
 
 import About from "./../../components/page/top/about/About.vue";
+import Articles from "./../../components/page/top/articles/Articles.vue";
 import Introduction from "./../../components/page/top/introduction/Intro.vue";
 import Work from "./../../components/page/top/work/Work.vue";
 import ScrollNav from "./../../components/ui/scroll/scrollNav/ScrollNav.vue";
@@ -22,6 +23,7 @@ const sectionList = ref(topData.scrollNav);
     <Introduction />
     <About />
     <Work />
+    <Articles />
     <ScrollNav :sections="sectionList" />
   </main>
 </template>

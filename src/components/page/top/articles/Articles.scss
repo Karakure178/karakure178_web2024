@@ -1,0 +1,50 @@
+@use "../../../../assets/scss/configs/index" as *;
+
+// ===========================================
+// work 全体設定
+// ===========================================
+.articles {
+  height: 100vh;
+  background-color: #fff;
+
+  @include L-XL {
+    max-height: 1080px;
+  }
+}
+
+.articles__inner {
+  @include L-XL {
+    position: relative;
+    max-width: 1280px;
+    padding-top: 132px; // TODO header込み、要修正
+    padding-right: 90px;
+    padding-left: 90px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  @include S-M {
+    padding-left: 20px;
+  }
+}
+
+.articles__heading {
+  font-family: $abrilFatface;
+  font-weight: 400;
+  color: #000;
+
+  @include L-XL {
+    font-size: 120px;
+    line-height: calc(162 / 120);
+  }
+
+  @include S-M {
+    font-size: 60px;
+  }
+}
+
+.articles__group {
+  @include L-XL {
+    padding-top: 40px;
+  }
+}

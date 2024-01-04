@@ -2,18 +2,25 @@
 import { ref } from "vue";
 
 import Article from "./Article.vue";
-import { workData } from "./data.js";
+import { articlesData } from "./data.js";
 
-const items = ref(workData.work);
-const commonUrl = ref(workData.commonUrl);
+const items = ref(articlesData.link);
+const commonUrl = ref(articlesData.commonUrl);
 </script>
 
 <template>
   <section id="articles" class="articles">
     <div class="articles__inner">
       <h2 class="articles__heading">Articles</h2>
-      <div v-for="item in items" :key="item.id" class="work__carousel">
-        <Article :title="item.title" :date="item.date" />
+      <div class="articles__group">
+        <Article
+          v-for="item in items"
+          :key="item.id"
+          :title="item.title"
+          :date="item.date"
+          :href="item.href"
+          :src="commonUrl + item.src"
+        />
       </div>
     </div>
   </section>

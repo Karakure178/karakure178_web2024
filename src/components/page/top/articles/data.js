@@ -23,13 +23,6 @@ export const articlesData = {
       alt: "zenn link",
     },
     {
-      href: "https://zenn.dev/karakure178/articles/26ba7ca0251c4e",
-      title: "[Pixi.JS×pixi3d]Canvasで3dモデルをくり抜いて動画マスクにしたい",
-      date: "2023/11/19",
-      src: "zenn.svg",
-      alt: "zenn link",
-    },
-    {
       href: "https://zenn.dev/karakure178/articles/eb0e60557c8ecb",
       title: "[Obsidian] Dataviewjsを使ってその日に記録したURL一覧を表示する",
       date: "2023/08/13",
