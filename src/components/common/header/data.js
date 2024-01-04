@@ -2,16 +2,16 @@ export const headerData = {
   logoUrl: "src/assets/image/common/header/icon.svg",
   navigationList: [
     {
-      title: "HOME",
+      title: "top",
       link: "",
     },
     {
-      title: "ABOUT",
-      link: "about",
+      title: "about",
+      link: "#about",
     },
     {
-      title: "MODAL",
-      link: "modal",
+      title: "work",
+      link: "#work",
     },
   ],
 };

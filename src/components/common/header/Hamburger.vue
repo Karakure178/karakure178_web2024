@@ -19,10 +19,11 @@ watch(
 </script>
 
 <template>
-  <button class="hamburger" @click="store.toggleIsOpen">
-    <span class="hamburger__text">MENU</span>
-    <span>{{ isOpen }}</span>
-  </button>
+  <button
+    class="hamburger"
+    :class="{ 'hamburger--active': store.isOpen }"
+    @click="store.toggleIsOpen"
+  ></button>
 </template>
 
 <style lang="scss" scoped>

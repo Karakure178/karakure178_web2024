@@ -16,10 +16,11 @@
 }
 
 .header__inner {
+  position: relative;
+  height: 100%;
+
   @include L-XL {
-    position: relative;
     max-width: 1280px;
-    height: 100%;
     padding-right: 90px;
     padding-left: 90px;
     margin-right: auto;
@@ -27,6 +28,7 @@
   }
 
   @include S-M {
+    padding-right: 20px;
     padding-left: 20px;
   }
 }
