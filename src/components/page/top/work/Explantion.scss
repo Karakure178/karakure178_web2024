@@ -7,22 +7,49 @@
   font-family: $abrilFatface;
   font-weight: 400;
   color: #000;
-}
 
-.workExplantion__title {
-  @include L-XL {
-    padding-top: 70px;
-    font-size: 60px;
-    line-height: calc(80 / 60);
+  @include MQ-DOWN(1174) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include MQ-BETWEEN(769, 1174) {
+    width: 365px;
   }
 
   @include S-M {
-    font-size: 20px;
+    width: 240px;
+    padding-top: 10px;
+  }
+}
+
+.workExplantion__title {
+  @include MQ-BETWEEN(769, 1174) {
+    padding-top: 20px;
+    font-size: 40px;
+  }
+
+  @include MQ-UP(1175) {
+    padding-top: 70px;
+    font-size: 60px;
+  }
+
+  @include S-M {
+    font-size: 30px;
   }
 }
 
 .workExplantion__titleText {
-  @include L-XL {
+  @include MQ-DOWN(1174) {
+    align-self: center;
+  }
+
+  @include MQ-BETWEEN(769, 1174) {
+    padding-top: 10px;
+    font-size: 30px;
+  }
+
+  @include MQ-UP(1175) {
     padding-top: 2px;
     padding-left: 131px;
     font-size: 48px;
@@ -35,19 +62,32 @@
 }
 
 .workExplantion__date {
-  @include L-XL {
+  @include MQ-BETWEEN(769, 1174) {
+    padding-top: 10px;
+    font-size: 40px;
+  }
+
+  @include MQ-UP(1175) {
     padding-top: 42px;
     font-size: 60px;
-    line-height: calc(80 / 60);
   }
 
   @include S-M {
-    font-size: 20px;
+    font-size: 30px;
   }
 }
 
 .workExplantion__dateText {
-  @include L-XL {
+  @include MQ-DOWN(1174) {
+    align-self: center;
+  }
+
+  @include MQ-BETWEEN(769, 1174) {
+    padding-top: 10px;
+    font-size: 30px;
+  }
+
+  @include MQ-UP(1175) {
     padding-top: 2px;
     padding-left: 131px;
     font-size: 48px;

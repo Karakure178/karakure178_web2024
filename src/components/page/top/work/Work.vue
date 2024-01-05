@@ -15,15 +15,15 @@ const commonUrl = ref(workData.commonUrl);
     <div class="work__inner">
       <h2 class="work__heading">Work</h2>
       <div v-for="item in items" :key="item.id" class="work__carousel">
+        <div class="work__image">
+          <img :src="commonUrl + item.src" :alt="item.alt" />
+        </div>
         <Explantion :title="item.title" :date="item.date" />
         <ReadButton
           :href="item.href"
           class-name="work__button"
           button-text="read code"
         />
-        <div class="work__image">
-          <img :src="commonUrl + item.src" :alt="item.alt" />
-        </div>
       </div>
     </div>
   </section>
