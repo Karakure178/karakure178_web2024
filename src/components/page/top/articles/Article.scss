@@ -3,16 +3,25 @@
 // -------------------------------------------
 // 記事一覧
 // -------------------------------------------
-.articles__list {
+
+.articlesList__item {
   @include L-XL {
+    margin-bottom: 10px;
   }
 
   @include S-M {
+    margin-bottom: 20px;
   }
-}
 
-.articlesList__item {
-  margin-bottom: 10px;
+  &:last-child {
+    @include L-XL {
+      margin-bottom: 0;
+    }
+
+    @include S-M {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .articlesList__link {
@@ -25,8 +34,23 @@
     padding-right: 10px;
     padding-bottom: 10px;
     padding-left: 10px;
+  }
 
-    img {
+  @include S-M {
+    display: flex;
+    padding-top: 23px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+  }
+
+  img {
+    @include L-XL {
+      width: 24px;
+      height: 100%;
+    }
+
+    @include S-M {
       width: 24px;
       height: 100%;
     }

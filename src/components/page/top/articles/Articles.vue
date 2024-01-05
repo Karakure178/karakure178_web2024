@@ -12,7 +12,7 @@ const commonUrl = ref(articlesData.commonUrl);
   <section id="articles" class="articles">
     <div class="articles__inner">
       <h2 class="articles__heading">Articles</h2>
-      <div class="articles__group">
+      <ul class="articles__group">
         <Article
           v-for="item in items"
           :key="item.id"
@@ -21,7 +21,7 @@ const commonUrl = ref(articlesData.commonUrl);
           :href="item.href"
           :src="commonUrl + item.src"
         />
-      </div>
+      </ul>
     </div>
   </section>
 </template>
