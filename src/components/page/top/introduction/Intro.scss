@@ -3,20 +3,38 @@
 .introduction {
   height: 100vh;
   background-color: #dcdcdc;
+
+  @include L-XL {
+    min-height: 910px;
+    max-height: 1180px;
+  }
+
+  @include S-M {
+    min-height: 667px;
+    max-height: 1024px; // ipad mini
+  }
 }
 
 .introduction__inner {
+  @include MQ-BETWEEN(769, 1174) {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
+  @include MQ-UP(1175) {
+    padding-right: 90px;
+    padding-left: 90px;
+  }
+
   @include L-XL {
     max-width: 1280px;
     padding-top: 315px; // TODO header込み、要修正
-    padding-right: 90px;
-    padding-left: 90px;
     margin-right: auto;
     margin-left: auto;
   }
 
   @include S-M {
-    padding-left: 20px;
+    padding-top: 128px;
   }
 }
 
@@ -33,9 +51,13 @@
 .introduction__name {
   color: #000;
 
-  @include L-XL {
+  @include MQ-BETWEEN(769, 1174) {
+    font-size: 110px;
+    text-align: center;
+  }
+
+  @include MQ-UP(1175) {
     font-size: 160px;
-    line-height: calc(216 / 160);
   }
 
   @include S-M {
@@ -46,9 +68,18 @@
 .introduction__job {
   color: #6b7280;
 
-  @include L-XL {
+  @include MQ-BETWEEN(769, 1174) {
+    margin-top: 28px;
+    font-size: 70px;
+    text-align: center;
+  }
+
+  @include MQ-UP(1175) {
     margin-top: 38px;
     font-size: 90px;
+  }
+
+  @include L-XL {
   }
 
   @include S-M {
