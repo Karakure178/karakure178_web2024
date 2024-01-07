@@ -9,16 +9,13 @@ import About from "./../../components/page/top/about/About.vue";
 import Articles from "./../../components/page/top/articles/Articles.vue";
 import Introduction from "./../../components/page/top/introduction/Intro.vue";
 import Work from "./../../components/page/top/work/Work.vue";
-import ScrollNav from "./../../components/ui/scroll/scrollNav/ScrollNav.vue";
-import { headData, topData } from "./data.js";
+import { headData } from "./data.js";
 
 useHead({
   title: headData.title,
   meta: [{ property: "og:title", content: headData.title }],
   link: [{ rel: "stylesheet", href: headData.font }],
 });
-
-const sectionList = ref(topData.scrollNav);
 </script>
 
 <template>
@@ -29,7 +26,6 @@ const sectionList = ref(topData.scrollNav);
     <About />
     <Work />
     <Articles />
-    <ScrollNav :sections="sectionList" />
   </main>
   <Footer />
 </template>
