@@ -22,6 +22,7 @@
   @include L-XL {
     position: relative;
     max-width: 1280px;
+    height: 100%;
     padding-top: 132px; // TODO header込み、要修正
     padding-right: 90px;
     padding-left: 90px;
@@ -31,7 +32,8 @@
 
   @include S-M {
     padding-top: 88px;
-    padding-left: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
   }
 }
 
@@ -57,44 +59,53 @@
     align-items: center;
     padding-top: 10px;
   }
+
+  @include MQ-UP(1175) {
+    display: grid;
+    grid-template-areas:
+      "explantion image"
+      "button image";
+    grid-template-rows: 1fr 0.3fr;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+  }
 }
 
 // -------------------------------------------
 // 作品の画像
 // -------------------------------------------
 .work__image {
-  @include MQ-BETWEEN(1175, 1420) {
-    right: 130px;
-  }
-
-  @include MQ-DOWN(1420) {
+  @include MQ-DOWN(1174) {
     width: 400px;
   }
 
+  @include MQ-BETWEEN(1175, 1420) {
+    width: 500px;
+  }
+
   @include MQ-UP(1175) {
-    position: absolute;
-    top: calc(50% + 130px);
-    right: 40px;
-    margin-top: 59px;
-    transform: translateY(-50%);
+    grid-area: image;
   }
 
   @include MQ-UP(1421) {
-    right: 40px;
     width: 564px;
-  }
-
-  @include L-XL {
-    box-shadow: -30px 30px 6px rgb(0 0 0 / 16%);
   }
 
   @include S-M {
     width: 260px;
-    box-shadow: -15px 15px 3px rgb(0 0 0 / 16%);
   }
 
   img {
     width: 100%;
+
+    @include L-XL {
+      box-shadow: -30px 30px 6px rgb(0 0 0 / 16%);
+    }
+
+    @include S-M {
+      box-shadow: -15px 15px 3px rgb(0 0 0 / 16%);
+    }
   }
 }
 
@@ -110,29 +121,37 @@
   }
 
   @include MQ-UP(1175) {
+    grid-area: button;
     margin-top: 48px;
-    margin-left: 131px;
   }
 
   @include S-M {
-    // margin-top: 48px;
+    margin-top: 20px;
+  }
+}
+
+// ===========================================
+// swiper
+// ===========================================
+
+.mySwiper {
+  @include L-XL {
   }
 
-  // & spanで書くと後追加のクラスでは対応できない
-  // 後ろに引き継いで指定ができない
-  // &.commonButton {
-  //   background-color: $accentColor;
+  @include S-M {
+  }
 
-  //   span {
-  //     color: $accentColor;
+  &::part(button-prev),
+  &::part(button-next) {
+    color: #000;
+  }
 
-  //     @include MQ-BETWEEN(769, 1174) {
-  //       font-size: 30px;
-  //     }
+  &::part(pagination) {
+    position: static;
+    margin-top: 10px;
+  }
 
-  //     @include S-M {
-  //       // margin-top: 48px;
-  //     }
-  //   }
-  // }
+  &::part(bullet-active) {
+    background-color: #000;
+  }
 }
