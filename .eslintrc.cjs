@@ -25,12 +25,12 @@ module.exports = {
     ],
     // 複数単語にしろとエラーを吐いたがあくまで勉強環境なのでoffにした
     // 参考：https://eslint.vuejs.org/rules/multi-word-component-names.html
-    "vue/multi-word-component-names": [
-      "error",
-      {
-        ignores: ["Header"],
-      },
-    ],
+    "vue/multi-word-component-names": "off",
+
+    // swiperのimport errorを無視する
+    // 参考：https://github.com/import-js/eslint-plugin-import/blob/v2.29.1/docs/rules/no-unresolved.md
+    "import/no-unresolved": [2, { ignore: ["swiper"] }],
+
     // importの並び替えを強制している
     // 参考：https://github.com/import-js/eslint-plugin-import
     // 参考：https://zenn.dev/riemonyamada/articles/02e8c172e1eeb1
