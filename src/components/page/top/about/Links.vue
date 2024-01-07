@@ -8,7 +8,7 @@ const commonUrl = ref(linkData.commonUrl);
 </script>
 
 <template>
-  <dt class="aboutText__likes">Links</dt>
+  <dt class="aboutText__likes">Links:</dt>
   <div class="aboutText__likesGroup">
     <dd v-for="item in items" :key="item.id" class="aboutText__likesIcon">
       <a class="aboutText__link" :href="item.href">

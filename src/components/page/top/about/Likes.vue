@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <dt class="aboutText__likes">Likes</dt>
+  <dt class="aboutText__likes">Likes:</dt>
   <dd class="aboutText__likesExplanation">Creative coding</dd>
 </template>
 
