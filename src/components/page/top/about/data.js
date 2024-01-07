@@ -12,7 +12,7 @@ export const linkData = {
       alt: "github link",
     },
     {
-      href: "",
+      href: "mailto:karakure1780@gmail.com",
       src: "gmail.svg",
       alt: "mail link",
     },
