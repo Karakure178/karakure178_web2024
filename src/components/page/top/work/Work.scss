@@ -52,7 +52,12 @@
   }
 }
 
+// カルーセルの設定
 .work__carousel {
+  @include MQ-BETWEEN(769, 1174) {
+    padding-bottom: 30px;
+  }
+
   @include MQ-DOWN(1174) {
     display: flex;
     flex-direction: column;
@@ -69,6 +74,11 @@
     grid-template-columns: 1fr 1fr;
     align-items: center;
     justify-items: center;
+    padding-bottom: 40px;
+  }
+
+  @include S-M {
+    padding-bottom: 20px;
   }
 }
 
@@ -109,6 +119,7 @@
   }
 }
 
+// ボタン設定の上書き
 .work__button {
   @include MQ-BETWEEN(769, 1174) {
     height: 60px;
@@ -135,17 +146,6 @@
 // ===========================================
 
 .mySwiper {
-  @include L-XL {
-  }
-
-  @include S-M {
-  }
-
-  &::part(button-prev),
-  &::part(button-next) {
-    color: #000;
-  }
-
   &::part(pagination) {
     position: static;
     margin-top: 10px;
