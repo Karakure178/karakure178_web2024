@@ -9,8 +9,15 @@
     font-size: 40px;
   }
 
+  @include MQ-BETWEEN(1175, 1420) {
+    font-size: 50px;
+  }
+
   @include MQ-UP(1175) {
     padding-top: 26px;
+  }
+
+  @include MQ-UP(1420) {
     font-size: 60px;
   }
 
@@ -21,11 +28,8 @@
 
 .aboutText__likesGroup {
   @include L-XL {
-    padding-top: 15px;
-  }
-
-  @include MQ-BETWEEN(769, 1174) {
     align-self: center;
+    padding-top: 15px;
   }
 
   @include S-M {
@@ -36,16 +40,6 @@
 .aboutText__likesIcon {
   display: inline-block;
 
-  @include MQ-BETWEEN(769, 1174) {
-    align-self: center;
-  }
-
-  @include MQ-UP(1175) {
-    &:first-of-type {
-      margin-left: 131px;
-    }
-  }
-
   &:not(:first-of-type) {
     margin-left: 29px;
   }
@@ -55,12 +49,6 @@
   display: block;
   width: 38px;
   height: 38px;
-
-  @include L-XL {
-  }
-
-  @include S-M {
-  }
 
   img {
     width: 100%;
