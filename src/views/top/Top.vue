@@ -9,6 +9,7 @@ import About from "./../../components/page/top/about/About.vue";
 import Articles from "./../../components/page/top/articles/Articles.vue";
 import Introduction from "./../../components/page/top/introduction/Intro.vue";
 import Work from "./../../components/page/top/work/Work.vue";
+import MovetopButton from "./../../components/ui/button/movetop/MovetopButton.vue";
 import { headData } from "./data.js";
 
 useHead({
@@ -28,6 +29,7 @@ useHead({
     <Articles />
   </main>
   <Footer />
+  <MovetopButton href="#top" />
 </template>
 
 <style lang="scss" scoped>

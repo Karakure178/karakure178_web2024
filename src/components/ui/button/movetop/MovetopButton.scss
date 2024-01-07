@@ -1,0 +1,10 @@
+@use "../../../../assets/scss/configs/index" as *;
+
+.movetopButton {
+  position: fixed;
+  right: 180px;
+  bottom: 120px;
+  width: 30px;
+  height: 30px;
+  background-color: $accentColor;
+}
