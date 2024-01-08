@@ -31,98 +31,37 @@ const sketch = function (p, one) {
   };
 
   let count = 0; // frameCount
-  let scrollHeight; // 高さ
   p.draw = function () {
-    p.clear();
+    p.clear(); // shaderと噛むことで透過できる
 
     p.translate(-p.width / 2, -p.height / 2);
     pg.background(color0);
 
-    scrollHeight = window.scrollY;
-
     // -------------------------------------------
     // ローディング画面設定
     // -------------------------------------------
-    const shake = p.map(window.scrollY, 0, 2000, 0, 40);
+    const shake = p.map(window.scrollY, 0, 2000, 5, 40);
+    const w = p.width - p.width / 4;
+    const h = window.innerHeight - window.innerHeight / 3;
     const init_load = () => {
-      let load = new Loading(
-        p,
-        pg,
-        140,
-        150,
-        100,
-        p.width / 2,
-        scrollHeight + window.innerHeight / 3,
-        10,
-        shake
-      );
+      let load = new Loading(p, pg, 140, 150, 100, w, h, 10, shake);
       load.loading(count, p.radians(0));
 
-      let load2 = new Loading(
-        p,
-        pg,
-        20,
-        80,
-        100,
-        p.width / 2,
-        scrollHeight + window.innerHeight / 3,
-        10,
-        shake
-      );
+      let load2 = new Loading(p, pg, 20, 80, 100, w, h, 10, shake);
       load2.loading(count, p.radians(15));
 
-      let load3 = new Loading(
-        p,
-        pg,
-        50,
-        70,
-        100,
-        p.width / 2,
-        scrollHeight + window.innerHeight / 3,
-        10,
-        shake
-      );
+      let load3 = new Loading(p, pg, 50, 70, 100, w, h, 10, shake);
       load3.loading(50, p.radians(count));
 
-      let load4 = new Loading(
-        p,
-        pg,
-        100,
-        130,
-        100,
-        p.width / 2,
-        scrollHeight + window.innerHeight / 3,
-        10,
-        shake
-      );
+      let load4 = new Loading(p, pg, 100, 130, 100, w, h, 10, shake);
       load4.loading(count, p.radians(150));
 
-      let load5 = new Loading(
-        p,
-        pg,
-        90,
-        200,
-        100,
-        p.width / 2,
-        scrollHeight + window.innerHeight / 3,
-        10,
-        shake
-      );
+      let load5 = new Loading(p, pg, 90, 200, 100, w, h, 10, shake);
       load5.loading(15, p.radians(count + 120));
       load5.loading(15, p.radians(count + 240));
       load5.loading(15, p.radians(count + 0));
 
-      let load6 = new Loading(
-        p,
-        pg,
-        100,
-        170,
-        100,
-        p.width / 2,
-        scrollHeight + window.innerHeight / 3,
-        10,
-        shake
-      );
+      let load6 = new Loading(p, pg, 100, 170, 100, w, h, 10, shake);
       load6.loading(10, p.radians(count + 190));
       load6.loading(10, p.radians(count + 70));
       load6.loading(10, p.radians(count + 310));
@@ -158,6 +97,10 @@ const sketch = function (p, one) {
   // 画面がリサイズすると発火する関数
   p.windowResized = function () {
     p.resizeCanvas(window.innerWidth, window.innerHeight);
+    pg = p.createGraphics(p.width, p.height);
+    pg.strokeWeight(3);
+    pg.noFill();
+    pg.stroke(0);
   };
 
   const rand_color = (colorCode) => {
@@ -171,11 +114,16 @@ const sketch = function (p, one) {
  * ======================================== */
 window.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
-    const one = document.getElementById("one");
-    console.log(one);
-    // one.classList.add("is-loaded");
+    const one = document.getElementById("one"); // TODO clientWidth回り見直す
+    one.classList.add("is-loaded");
     new p5(sketch, one);
   }, 1000);
+
+  // watchの処理を追加する
+  // loadが終わったことを知らせる
+  // loadが終わったことをLoading.vueとタイトルに伝える
+  // Karakure178のアニメーションが終わったことをpiniaを通してwatchで受け取る
+  // is-loadedを付与
 });
 </script>
 
@@ -189,5 +137,11 @@ window.addEventListener("DOMContentLoaded", () => {
   width: 100vw;
   height: 100vh;
   position: fixed;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+
+  &.is-loaded {
+    opacity: 1;
+  }
 }
 </style>
