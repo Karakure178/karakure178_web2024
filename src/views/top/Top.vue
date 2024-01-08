@@ -2,7 +2,7 @@
 import { useHead } from "unhead";
 import { ref } from "vue";
 
-// import Loading from "./../../components/common/animation/Loading.vue";
+import Loading from "./../../components/common/animation/Loading.vue";
 import Footer from "./../../components/common/footer/Footer.vue";
 import Header from "./../../components/common/header/Header.vue";
 import About from "./../../components/page/top/about/About.vue";
@@ -20,7 +20,7 @@ useHead({
 </script>
 
 <template>
-  <!-- <Loading /> -->
+  <Loading />
   <Header />
   <main>
     <Introduction />
