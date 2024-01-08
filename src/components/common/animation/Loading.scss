@@ -7,14 +7,17 @@
 // ===========================================
 
 // CSS変数を入れる
+$num: 10; // --circle-numと同じ数値を入れること
+
 * {
   --base-angle: calc(360deg / var(--circle-num)); /* 配置する円の角度 */
-  --radius: 100px; /* 配置する円の半径 */
+  --radius: 80px; /* 配置する円の半径 */
 
   // 配置する円の角度、座標を計算
   --angle: var(--base-angle) * var(--n) - 90deg;
   --x: calc(cos(var(--angle)) * var(--radius) - 50%);
   --y: calc(sin(var(--angle)) * var(--radius) - 50%);
+  --duration: 1.8s;
 }
 
 .loading {
@@ -23,13 +26,16 @@
   left: 50%;
   width: calc(var(--radius) * 2);
   aspect-ratio: 1;
-  border: 1px solid #ccc;
-  border-radius: 50%;
+
+  // border: 1px solid #ccc;
+  // border-radius: 50%;
   transform: translate(-50%, -50%);
 
   &.is-hidden {
     display: none;
   }
+
+  //animation: loading 5s ease-in-out infinite;
 }
 
 .loading__circle {
@@ -38,14 +44,44 @@
   left: 50%;
   width: 20px;
   aspect-ratio: 1;
-  background-color: #eb6bb1;
+  background-color: #6b7280;
   border-radius: 50%;
 
-  @for $i from 1 through 6 {
+  //$num: var(--circle-num);
+
+  // 参考：https://tsudoi.org/weblog/2474/
+  //@debug type-of($value: $num); // 型を確認できる
+
+  @for $i from 1 through $num {
     &:nth-of-type(#{$i}) {
       --n: #{$i};
 
       translate: var(--x) var(--y);
+
+      --delay: calc(var(--duration) * var(--n) / 8);
+
+      animation: animate var(--duration) var(--delay) infinite ease-in-out;
     }
+  }
+}
+
+// ===========================================
+// loading アニメーション
+// ===========================================
+@keyframes loading {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+// 参考：https://ics.media/entry/230126/
+@keyframes animate {
+  50% {
+    opacity: 1;
+    transform: scale(1.6);
   }
 }

@@ -1,7 +1,8 @@
 <script setup>
 import { ref } from "vue";
-const circle_item = ref(6);
-const red = ref("red");
+
+// ローディングの円の個数
+const circle_item = ref(10);
 </script>
 
 <template>
