@@ -139,7 +139,7 @@ window.addEventListener("DOMContentLoaded", () => {
   position: fixed;
   opacity: 0;
   transition: opacity 1s ease-in-out;
-
+  bottom: 0;
   &.is-loaded {
     opacity: 1;
   }

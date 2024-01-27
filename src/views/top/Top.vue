@@ -2,8 +2,6 @@
 import { useHead } from "unhead";
 import { ref } from "vue";
 
-import Loading from "./../../components/common/animation/loading/Loading.vue";
-import Myart from "./../../components/common/animation/p5/Myart.vue";
 import Footer from "./../../components/common/footer/Footer.vue";
 import Header from "./../../components/common/header/Header.vue";
 import About from "./../../components/page/top/about/About.vue";
@@ -23,8 +21,6 @@ useHead({
 <template>
   <Header />
   <main>
-    <Myart />
-    <Loading />
     <Introduction />
     <About />
     <Work />

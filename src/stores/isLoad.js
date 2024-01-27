@@ -13,6 +13,8 @@ export const useLoadStore = defineStore("load", () => {
    * loading更新用関数<br>
    * loading(setTimeout)が完了するとisLoadがtrueになる<br>
    * クラスの付け替えが発生する
+   * @TODO ローディングcssのほうにも処理を記載する
+   * @TODO ローディング中はoverflowをhiddenかけないとローディング画面残ったままになっちゃう
    */
   function toggleIsLoad() {
     if (isLoad.value) {
