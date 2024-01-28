@@ -1,5 +1,6 @@
 <script setup>
 import p5 from "p5";
+import { onMounted } from "vue";
 
 import { useLoadStore } from "../../../../stores/isLoad";
 
@@ -10,15 +11,23 @@ import vs from "./shader/normal.vert";
 const store = useLoadStore();
 
 const sketch = function (p, one) {
-  let canvas;
+  // let canvas;
   let maxNum = 100;
   let pg;
   let theShader1;
   let color0;
 
   // 初期セットアップ
-  p.setup = function () {
-    canvas = p.createCanvas(window.innerWidth, window.innerHeight, p.WEBGL);
+  p.setup = () => {
+    //    window.innerHeight * 0.9,
+
+    // safari対策でouterHeightを使う
+    // アドレスバー分へこんだり縮んだりするのを防ぐため。
+    let canvas = p.createCanvas(
+      p.windowWidth,
+      window.outerHeight * 0.9,
+      p.WEBGL
+    );
     canvas.parent(one);
 
     p.frameRate(24);
@@ -35,9 +44,8 @@ const sketch = function (p, one) {
   };
 
   let count = 0; // frameCount
-  p.draw = function () {
+  p.draw = () => {
     p.clear(); // shaderと噛むことで透過できる
-
     p.translate(-p.width / 2, -p.height / 2);
     pg.background(color0);
 
@@ -46,7 +54,7 @@ const sketch = function (p, one) {
     // -------------------------------------------
     const shake = p.map(window.scrollY, 0, 2000, 5, 40);
     const w = p.width - p.width / 4;
-    const h = window.innerHeight - window.innerHeight / 3;
+    const h = p.height - p.height / 2.7;
     const init_load = () => {
       let load = new Loading(p, pg, 140, 150, 100, w, h, 10, shake);
       load.loading(count, p.radians(0));
@@ -99,8 +107,10 @@ const sketch = function (p, one) {
   };
 
   // 画面がリサイズすると発火する関数
-  p.windowResized = function () {
-    p.resizeCanvas(window.innerWidth, window.innerHeight);
+  p.windowResized = () => {
+    // p.resizeCanvas(window.innerWidth, window.outerHeight * 0.9, p.WEBGL);
+    p.resizeCanvas(p.windowWidth, window.outerHeight * 0.9, p.WEBGL);
+    pg.remove(); // 無限canvas増殖対策
     pg = p.createGraphics(p.width, p.height);
     pg.strokeWeight(3);
     pg.noFill();
@@ -116,7 +126,7 @@ const sketch = function (p, one) {
 /* ===========================================
  * 全体処理用
  * ======================================== */
-window.addEventListener("DOMContentLoaded", () => {
+onMounted(() => {
   setTimeout(() => {
     const one = document.getElementById("one"); // TODO clientWidth回り見直す
     one.classList.add("is-loaded");
