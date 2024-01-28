@@ -38,8 +38,8 @@
   }
 }
 
-.introduction__name,
-.introduction__job {
+.introductionHeading__name,
+.introductionHeading__job {
   font-family: $abrilFatface;
   font-weight: 400;
 
@@ -48,7 +48,7 @@
   }
 }
 
-.introduction__name {
+.introductionHeading__name {
   color: #000;
 
   @include MQ-BETWEEN(769, 1174) {
@@ -65,17 +65,17 @@
   }
 }
 
-.introduction__job {
+.introductionHeading__job {
   color: #6b7280;
 
   @include MQ-BETWEEN(769, 1174) {
-    margin-top: 28px;
+    //margin-top: 28px;
     font-size: 70px;
     text-align: center;
   }
 
   @include MQ-UP(1175) {
-    margin-top: 38px;
+    //margin-top: 38px;
     font-size: 90px;
   }
 
@@ -84,5 +84,48 @@
 
   @include S-M {
     font-size: 20px;
+  }
+}
+
+.introductionHeading {
+  display: block;
+  overflow: hidden;
+
+  span {
+    display: block;
+    transform: translateY(100%);
+    transform-origin: top;
+  }
+
+  // canvasが読み込まれたらis-activeを付与してテキストが表示される
+  &.is-active {
+    @for $i from 1 through 3 {
+      // delayを別途計算している
+      &:nth-child(#{$i}) {
+        span {
+          animation: fadein 2s 0.2s * ($i - 1) both;
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadein {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes fadeout {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: none;
   }
 }

@@ -10,8 +10,17 @@ import Myart from "../../../common/animation/p5/Myart.vue";
     <Loading />
     <Myart />
     <div class="introduction__inner">
-      <h1 class="introduction__name">Karakure178</h1>
-      <p class="introduction__job">Frontend<br />engineer.</p>
+      <h1 class="introduction__Heading">
+        <span class="introductionHeading introductionHeading__name">
+          <span>Karakure178</span>
+        </span>
+        <span class="introductionHeading introductionHeading__job">
+          <span>Frontend </span>
+        </span>
+        <span class="introductionHeading introductionHeading__job">
+          <span>engineer. </span>
+        </span>
+      </h1>
     </div>
   </section>
 </template>
