@@ -1,8 +1,10 @@
 <script setup>
+import { useLoadStore } from "../../../../stores/isLoad";
 import Loading from "../../../common/animation/loading/Loading.vue";
 import Myart from "../../../common/animation/p5/Myart.vue";
 
 // アニメーション管理の記述をここに書く
+const store = useLoadStore();
 </script>
 
 <template>
@@ -11,13 +13,22 @@ import Myart from "../../../common/animation/p5/Myart.vue";
     <Myart />
     <div class="introduction__inner">
       <h1 class="introduction__Heading">
-        <span class="introductionHeading introductionHeading__name">
+        <span
+          class="introductionHeading introductionHeading__name"
+          :class="{ 'is--active': store.isLoad }"
+        >
           <span>Karakure178</span>
         </span>
-        <span class="introductionHeading introductionHeading__job">
+        <span
+          class="introductionHeading introductionHeading__job"
+          :class="{ 'is--active': store.isLoad }"
+        >
           <span>Frontend </span>
         </span>
-        <span class="introductionHeading introductionHeading__job">
+        <span
+          class="introductionHeading introductionHeading__job"
+          :class="{ 'is--active': store.isLoad }"
+        >
           <span>engineer. </span>
         </span>
       </h1>

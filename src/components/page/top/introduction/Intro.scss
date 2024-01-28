@@ -98,7 +98,7 @@
   }
 
   // canvasが読み込まれたらis-activeを付与してテキストが表示される
-  &.is-active {
+  &.is--active {
     @for $i from 1 through 3 {
       // delayを別途計算している
       &:nth-child(#{$i}) {

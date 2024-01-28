@@ -1,9 +1,13 @@
 <script setup>
 import p5 from "p5";
 
+import { useLoadStore } from "../../../../stores/isLoad";
+
 import { Loading } from "./Loading";
 import fs from "./shader/normal.frag";
 import vs from "./shader/normal.vert";
+
+const store = useLoadStore();
 
 const sketch = function (p, one) {
   let canvas;
@@ -25,7 +29,7 @@ const sketch = function (p, one) {
     pg = p.createGraphics(p.width, p.height);
     pg.strokeWeight(3);
     pg.noFill();
-    pg.stroke(0);
+    pg.stroke("#dcdcdc");
     theShader1 = p.createShader(vs, fs);
     color0 = "#234567";
   };
@@ -100,7 +104,7 @@ const sketch = function (p, one) {
     pg = p.createGraphics(p.width, p.height);
     pg.strokeWeight(3);
     pg.noFill();
-    pg.stroke(0);
+    pg.stroke("#dcdcdc");
   };
 
   const rand_color = (colorCode) => {
@@ -117,6 +121,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const one = document.getElementById("one"); // TODO clientWidth回り見直す
     one.classList.add("is-loaded");
     new p5(sketch, one);
+    store.toggleIsLoad();
   }, 1000);
 
   // watchの処理を追加する

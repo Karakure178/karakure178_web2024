@@ -17,7 +17,7 @@ export const useLoadStore = defineStore("load", () => {
    * @TODO ローディング中はoverflowをhiddenかけないとローディング画面残ったままになっちゃう
    */
   function toggleIsLoad() {
-    if (isLoad.value) {
+    if (!isLoad.value) {
       isLoad.value = true;
     }
   }

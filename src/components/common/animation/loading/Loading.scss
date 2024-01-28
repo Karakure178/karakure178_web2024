@@ -23,6 +23,10 @@
   animation: l4 1s infinite steps(10);
 
   --b: 20px;
+
+  &.is--hidden {
+    display: none;
+  }
 }
 
 @keyframes l4 {
