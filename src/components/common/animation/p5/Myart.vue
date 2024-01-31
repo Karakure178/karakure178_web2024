@@ -162,7 +162,9 @@ onMounted(() => {
     threshold: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
   };
   //
-
+  const easeOutQuad = (t) => {
+    return t * (2 - t);
+  };
   // コールバックの受け取り
   const callback = (entries, observer) => {
     console.log(entries[0]);
@@ -172,7 +174,7 @@ onMounted(() => {
       console.log("画面に入った");
       // opacity処理を描く、スクロール量と連動させる
       const scroll = window.scrollY;
-      const opacity = Math.max(0, 1 - scroll / window.innerHeight); //この数値easingさせたい
+      const opacity = Math.max(0, 1 - easeOutQuad(scroll / window.innerHeight)); //この数値easingさせたい
       document.querySelector("#one").style.opacity = String(opacity);
       console.log(opacity, 0);
     } else {
@@ -199,7 +201,6 @@ onMounted(() => {
   height: 100vh;
   position: fixed;
   opacity: 0;
-  transition: opacity 1s ease-in-out;
   bottom: 0;
   &.is-loaded {
     opacity: 1;
