@@ -1,6 +1,6 @@
 <script setup>
 import p5 from "p5";
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
 
 import { useLoadStore } from "../../../../stores/isLoad";
 
@@ -9,6 +9,7 @@ import fs from "./shader/normal.frag";
 import vs from "./shader/normal.vert";
 
 const store = useLoadStore();
+const end = ref();
 
 const sketch = function (p, one) {
   // let canvas;
@@ -123,27 +124,72 @@ const sketch = function (p, one) {
   };
 };
 
+// 親要素のHTMLElementを取得する
+const props = defineProps({
+  target: Object,
+});
+
 /* ===========================================
  * 全体処理用
  * ======================================== */
 onMounted(() => {
+  console.log(end.value);
+
+  const body = document.querySelector("body");
+  body.style.overflow = "hidden";
   setTimeout(() => {
     const one = document.getElementById("one"); // TODO clientWidth回り見直す
     one.classList.add("is-loaded");
     new p5(sketch, one);
     store.toggleIsLoad();
+    body.style.overflow = "";
   }, 1000);
 
-  // watchの処理を追加する
   // loadが終わったことを知らせる
   // loadが終わったことをLoading.vueとタイトルに伝える
   // Karakure178のアニメーションが終わったことをpiniaを通してwatchで受け取る
   // is-loadedを付与
+
+  /* ===========================================
+   * intersection observer用
+   * ======================================== */
+
+  // intersection observerを使ってopacityを変化させる
+  // 参考：https://qiita.com/Kaitou/items/046d5b43eb6d798a87dd
+  //  root: props.target,
+  const options = {
+    rootMargin: "0px",
+    threshold: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+  };
+  //
+
+  // コールバックの受け取り
+  const callback = (entries, observer) => {
+    console.log(entries[0]);
+    const firstEntry = entries[0];
+    if (firstEntry.isIntersecting) {
+      // 画面に入った時の処理
+      console.log("画面に入った");
+      // opacity処理を描く、スクロール量と連動させる
+      const scroll = window.scrollY;
+      const opacity = Math.max(0, 1 - scroll / window.innerHeight); //この数値easingさせたい
+      document.querySelector("#one").style.opacity = String(opacity);
+      console.log(opacity, 0);
+    } else {
+      // 画面から出た時の処理
+      console.log("画面から出た");
+    }
+  };
+
+  // TODO intersection observerを使ってopacityを変化させる
+  // ちょっとでもviewportから出たら少しずつopacityを下げる
+  const observer = new IntersectionObserver(callback, options);
+  observer.observe(document.getElementById("top"));
 });
 </script>
 
 <template>
-  <div id="one" class="loading__canvas"></div>
+  <div id="one" ref="end" class="loading__canvas"></div>
 </template>
 
 <style lang="scss" scoped>
