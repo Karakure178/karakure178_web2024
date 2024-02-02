@@ -150,7 +150,6 @@ onMounted(() => {
 
     // intersection observerを使ってopacityを変化させる
     // 参考：https://qiita.com/Kaitou/items/046d5b43eb6d798a87dd
-    //  root: props.target,
     const options = {
       rootMargin: "0px",
       threshold: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
@@ -185,7 +184,8 @@ onMounted(() => {
     const observer = new IntersectionObserver(callback, options);
     observer.observe(document.getElementById("top"));
 
-    // transitionEnd回りの設定をする
+    // opacityのtransitionひっぺはがす用処理
+    // 最初のcanvas表示はtransitionさせるが、それ以降はobserverでコントロールするためはがす
     one.addEventListener(
       "transitionend",
       () => {
