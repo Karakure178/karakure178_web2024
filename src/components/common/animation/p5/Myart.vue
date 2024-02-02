@@ -154,9 +154,9 @@ onMounted(() => {
       rootMargin: "0px",
       threshold: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
     };
-    //
-    const easeOutQuad = (t) => {
-      return t * (2 - t);
+
+    const easeOutExpo = (x) => {
+      return x === 1 ? 1 : 1 - Math.pow(2, -10 * x);
     };
     // コールバックの受け取り
     const callback = (entries, observer) => {
@@ -169,7 +169,7 @@ onMounted(() => {
         const scroll = window.scrollY;
         const opacity = Math.max(
           0,
-          1 - easeOutQuad(scroll / window.innerHeight)
+          1 - easeOutExpo(scroll / window.innerHeight)
         ); //この数値easingさせたい
         document.querySelector("#one").style.opacity = String(opacity);
         console.log(opacity, 0);
