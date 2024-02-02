@@ -143,50 +143,63 @@ onMounted(() => {
     new p5(sketch, one);
     store.toggleIsLoad();
     body.style.overflow = "";
+
+    /* ===========================================
+     * intersection observer用
+     * ======================================== */
+
+    // intersection observerを使ってopacityを変化させる
+    // 参考：https://qiita.com/Kaitou/items/046d5b43eb6d798a87dd
+    //  root: props.target,
+    const options = {
+      rootMargin: "0px",
+      threshold: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+    };
+    //
+    const easeOutQuad = (t) => {
+      return t * (2 - t);
+    };
+    // コールバックの受け取り
+    const callback = (entries, observer) => {
+      console.log(entries[0]);
+      const firstEntry = entries[0];
+      if (firstEntry.isIntersecting) {
+        // 画面に入った時の処理
+        console.log("画面に入った");
+        // opacity処理を描く、スクロール量と連動させる
+        const scroll = window.scrollY;
+        const opacity = Math.max(
+          0,
+          1 - easeOutQuad(scroll / window.innerHeight)
+        ); //この数値easingさせたい
+        document.querySelector("#one").style.opacity = String(opacity);
+        console.log(opacity, 0);
+      } else {
+        // 画面から出た時の処理
+        console.log("画面から出た");
+      }
+    };
+
+    // intersection observerを使ってopacityを変化させてる
+    // ちょっとでもviewportから出たら少しずつopacityを下げる
+    const observer = new IntersectionObserver(callback, options);
+    observer.observe(document.getElementById("top"));
+
+    // transitionEnd回りの設定をする
+    one.addEventListener(
+      "transitionend",
+      () => {
+        console.log("transitionend");
+        one.style.transition = "none";
+      },
+      true
+    );
   }, 1000);
 
   // loadが終わったことを知らせる
   // loadが終わったことをLoading.vueとタイトルに伝える
   // Karakure178のアニメーションが終わったことをpiniaを通してwatchで受け取る
   // is-loadedを付与
-
-  /* ===========================================
-   * intersection observer用
-   * ======================================== */
-
-  // intersection observerを使ってopacityを変化させる
-  // 参考：https://qiita.com/Kaitou/items/046d5b43eb6d798a87dd
-  //  root: props.target,
-  const options = {
-    rootMargin: "0px",
-    threshold: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
-  };
-  //
-  const easeOutQuad = (t) => {
-    return t * (2 - t);
-  };
-  // コールバックの受け取り
-  const callback = (entries, observer) => {
-    console.log(entries[0]);
-    const firstEntry = entries[0];
-    if (firstEntry.isIntersecting) {
-      // 画面に入った時の処理
-      console.log("画面に入った");
-      // opacity処理を描く、スクロール量と連動させる
-      const scroll = window.scrollY;
-      const opacity = Math.max(0, 1 - easeOutQuad(scroll / window.innerHeight)); //この数値easingさせたい
-      document.querySelector("#one").style.opacity = String(opacity);
-      console.log(opacity, 0);
-    } else {
-      // 画面から出た時の処理
-      console.log("画面から出た");
-    }
-  };
-
-  // TODO intersection observerを使ってopacityを変化させる
-  // ちょっとでもviewportから出たら少しずつopacityを下げる
-  const observer = new IntersectionObserver(callback, options);
-  observer.observe(document.getElementById("top"));
 });
 </script>
 
@@ -202,6 +215,7 @@ onMounted(() => {
   position: fixed;
   opacity: 0;
   bottom: 0;
+  transition: opacity 1s ease-in-out;
   &.is-loaded {
     opacity: 1;
   }
