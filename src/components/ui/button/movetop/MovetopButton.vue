@@ -47,7 +47,9 @@ onMounted(() => {
     class="movetopButton"
     :href="classList.href"
     @click.stop.prevent="movetoClick"
-  ></a>
+  >
+    <img src="@/assets/image/common/icon/arrow.svg" alt="movetop" />
+  </a>
 </template>
 
 <style lang="scss" scoped>

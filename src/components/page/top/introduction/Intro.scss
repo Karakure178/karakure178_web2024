@@ -49,7 +49,7 @@
 }
 
 .introductionHeading__name {
-  color: #000;
+  color: $blackColor;
 
   @include MQ-BETWEEN(769, 1174) {
     font-size: 110px;

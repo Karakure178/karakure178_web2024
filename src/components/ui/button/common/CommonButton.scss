@@ -4,8 +4,8 @@
   display: flex;
   justify-content: center;
   font-family: $abrilFatface;
-  background-color: #000;
-  border: 2px solid #000;
+  background-color: $blackColor;
+  border: 2px solid $blackColor;
   border-radius: 3px;
   transition: background-color 0.3s ease-out;
 
@@ -53,7 +53,7 @@
     background-color: #707070;
 
     & span {
-      color: #000;
+      color: $blackColor;
     }
   }
 }

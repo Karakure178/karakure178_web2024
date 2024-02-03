@@ -25,7 +25,7 @@
 }
 
 .articlesList__link {
-  border: solid 1px #000;
+  border: solid 1px $blackColor;
   border-radius: 4px;
 
   @include L-XL {
@@ -70,7 +70,7 @@
 
 .articlesList__title {
   font-weight: 700;
-  color: #000;
+  color: $blackColor;
 
   @include L-XL {
     font-size: 16px;

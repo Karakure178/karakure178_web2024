@@ -6,7 +6,7 @@
 .work__explantion {
   font-family: $abrilFatface;
   font-weight: 400;
-  color: #000;
+  color: $blackColor;
 
   @include MQ-UP(1175) {
     grid-area: explantion;

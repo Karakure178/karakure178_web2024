@@ -40,7 +40,7 @@
 .work__heading {
   font-family: $abrilFatface;
   font-weight: 400;
-  color: #000;
+  color: $blackColor;
 
   @include L-XL {
     font-size: 120px;
@@ -152,6 +152,6 @@
   }
 
   &::part(bullet-active) {
-    background-color: #000;
+    background-color: $blackColor;
   }
 }

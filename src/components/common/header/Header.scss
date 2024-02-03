@@ -7,7 +7,7 @@
   position: fixed;
   z-index: 1000;
   width: 100vw;
-  background-color: #000;
+  background-color: $blackColor;
 
   @include L-XL {
     height: 86px;
