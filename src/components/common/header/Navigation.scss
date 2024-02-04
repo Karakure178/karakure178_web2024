@@ -22,6 +22,8 @@
   }
 
   &.headerNavigation--active {
+    overflow: scroll; // アンカーリンク多かった時にスクロールできるよう対策
+
     @include S-M {
       position: fixed;
       display: block;

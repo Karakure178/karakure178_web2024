@@ -164,7 +164,6 @@ onMounted(() => {
       const firstEntry = entries[0];
       if (firstEntry.isIntersecting) {
         // 画面に入った時の処理
-        console.log("画面に入った");
         // opacity処理を描く、スクロール量と連動させる
         const scroll = window.scrollY;
         const opacity = Math.max(
@@ -172,10 +171,9 @@ onMounted(() => {
           1 - easeOutExpo(scroll / window.innerHeight)
         ); //この数値easingさせたい
         document.querySelector("#one").style.opacity = String(opacity);
-        console.log(opacity, 0);
       } else {
+        document.querySelector("#one").style.opacity = "0";
         // 画面から出た時の処理
-        console.log("画面から出た");
       }
     };
 

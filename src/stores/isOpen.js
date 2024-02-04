@@ -1,10 +1,13 @@
-import { defineStore } from 'pinia'
-import { ref } from 'vue'
+import { defineStore } from "pinia";
+import { ref } from "vue";
 
-import { addHamburger, removeHamburger } from '../components/common/header/controlHamburger'
+import {
+  addHamburger,
+  removeHamburger,
+} from "../components/common/header/controlHamburger";
 
-export const useHamburgerStore = defineStore('hamburger', () => {
-  const isOpen = ref(false)
+export const useHamburgerStore = defineStore("hamburger", () => {
+  const isOpen = ref(false);
 
   /**
    * @function toggleIsOpen
@@ -15,12 +18,14 @@ export const useHamburgerStore = defineStore('hamburger', () => {
    * クラスの付け替えが発生する
    */
   function toggleIsOpen() {
+    console.log("isOpen.value", isOpen.value);
     if (isOpen.value) {
-      addHamburger()
-      isOpen.value = false
+      removeHamburger();
+      isOpen.value = false;
     } else {
-      removeHamburger()
-      isOpen.value = true
+      console.log("addHamburger");
+      addHamburger();
+      isOpen.value = true;
     }
   }
 
@@ -32,9 +37,9 @@ export const useHamburgerStore = defineStore('hamburger', () => {
    * 強制的にメニューをオフにする<br>
    */
   function toggleOff() {
-    removeHamburger('resize')
-    isOpen.value = false
+    removeHamburger("resize");
+    isOpen.value = false;
   }
 
-  return { isOpen, toggleIsOpen, toggleOff }
-})
+  return { isOpen, toggleIsOpen, toggleOff };
+});
