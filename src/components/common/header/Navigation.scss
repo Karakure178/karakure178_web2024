@@ -44,7 +44,7 @@
   @include S-M {
     display: flex;
     flex-direction: column;
-    margin-top: 51px;
+    margin-top: 20px;
     margin-right: map(100vw, 375, 769, 40, 180);
     margin-left: map(100vw, 375, 769, 40, 180);
   }

@@ -4,6 +4,8 @@
 // work 全体設定
 // ===========================================
 .work {
+  position: relative;
+  z-index: 3;
   height: 100vh;
   background-color: #dcdcdc;
 
