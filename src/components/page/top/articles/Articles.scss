@@ -4,6 +4,8 @@
 // work 全体設定
 // ===========================================
 .articles {
+  position: relative;
+  z-index: 3;
   background-color: #fff;
 
   @include L-XL {
