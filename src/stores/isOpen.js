@@ -18,7 +18,6 @@ export const useHamburgerStore = defineStore("hamburger", () => {
    * クラスの付け替えが発生する
    */
   function toggleIsOpen() {
-    console.log("isOpen.value", isOpen.value);
     if (isOpen.value) {
       removeHamburger();
       isOpen.value = false;

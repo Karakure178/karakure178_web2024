@@ -34,10 +34,17 @@ dt {
 // modal等スクロール処理回避用(sp)
 .fixed__body {
   @include S-M {
+    // width: 100%;
     position: fixed;
     left: 0;
-    width: 100%;
     height: 100vh;
+
+    //overflow: hidden;
+  }
+}
+
+.fixed__html {
+  @include S-M {
     overflow: hidden;
   }
 }
