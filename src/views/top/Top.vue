@@ -2,6 +2,7 @@
 import { useHead } from "unhead";
 import { ref } from "vue";
 
+import AnkerTransition from "./../../components/common/animation/ankerTransition/AnkerTransition.vue";
 import Footer from "./../../components/common/footer/Footer.vue";
 import Header from "./../../components/common/header/Header.vue";
 import About from "./../../components/page/top/about/About.vue";
@@ -21,6 +22,7 @@ useHead({
 <template>
   <Header />
   <main>
+    <AnkerTransition />
     <Introduction />
     <About />
     <Work />

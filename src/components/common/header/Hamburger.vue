@@ -13,7 +13,7 @@ watch(
   () => mediaQuery.value,
   () => {
     store.toggleOff();
-    console.log("値が変わった!!!");
+    // console.log("値が変わった!!!");
   }
 );
 </script>
