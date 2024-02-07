@@ -22,7 +22,7 @@ export const useHamburgerStore = defineStore("hamburger", () => {
       removeHamburger();
       isOpen.value = false;
     } else {
-      console.log("addHamburger");
+      //console.log("addHamburger");
       addHamburger();
       isOpen.value = true;
     }

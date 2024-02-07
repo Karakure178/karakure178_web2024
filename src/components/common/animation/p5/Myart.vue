@@ -133,7 +133,7 @@ const props = defineProps({
  * 全体処理用
  * ======================================== */
 onMounted(() => {
-  console.log(end.value);
+  //console.log(end.value);
 
   const body = document.querySelector("body");
   body.style.overflow = "hidden";
@@ -160,7 +160,7 @@ onMounted(() => {
     };
     // コールバックの受け取り
     const callback = (entries, observer) => {
-      console.log(entries[0]);
+      //console.log(entries[0]);
       const firstEntry = entries[0];
       if (firstEntry.isIntersecting) {
         // 画面に入った時の処理
@@ -187,7 +187,7 @@ onMounted(() => {
     one.addEventListener(
       "transitionend",
       () => {
-        console.log("transitionend");
+        //console.log("transitionend");
         one.style.transition = "none";
       },
       true

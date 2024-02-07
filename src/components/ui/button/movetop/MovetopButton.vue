@@ -13,7 +13,7 @@ const movetoClick = () => {
   const moveTo = new MoveTo();
   const target = document.querySelector(classList.href);
   moveTo.move(target);
-  console.log("movetoClick");
+  //console.log("movetoClick");
 };
 
 onMounted(() => {
@@ -27,11 +27,11 @@ onMounted(() => {
     const firstEntry = entries[0];
     if (firstEntry.isIntersecting) {
       // 画面に入った時の処理
-      console.log("画面に入った");
+      //console.log("画面に入った");
       document.querySelector(".movetopButton").classList.add("is-active");
     } else {
       // 画面から出た時の処理
-      console.log("画面から出た");
+      //console.log("画面から出た");
       document.querySelector(".movetopButton").classList.remove("is-active");
     }
   };

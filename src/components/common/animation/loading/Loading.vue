@@ -7,7 +7,7 @@ const store = useLoadStore();
 watch(
   () => store.isLoad,
   () => {
-    console.log("isLoadが変わった");
+    //console.log("isLoadが変わった");
   }
 );
 </script>

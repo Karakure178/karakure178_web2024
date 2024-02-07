@@ -33,7 +33,7 @@ export const removeHamburger = (type) => {
 const stopScroll = () => {
   const fixedBody = document.querySelector("body");
   nowScrollY = window.pageYOffset;
-  console.log(nowScrollY, window.scrollY);
+  //console.log(nowScrollY, window.scrollY);
   fixedBody.style.top = "-" + nowScrollY + "px";
 };
 
