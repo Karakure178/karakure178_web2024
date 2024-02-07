@@ -27,6 +27,7 @@
 .articlesList__link {
   border: solid 1px $blackColor;
   border-radius: 4px;
+  transition: box-shadow 0.3s ease-in-out;
 
   @include L-XL {
     display: flex;
@@ -42,6 +43,10 @@
     padding-right: 10px;
     padding-bottom: 10px;
     padding-left: 10px;
+  }
+
+  @include hover-and-active {
+    box-shadow: 10px 5px 0 0 #777;
   }
 
   img {
