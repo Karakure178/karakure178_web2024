@@ -2,9 +2,9 @@ export const linkData = {
   commonUrl: "src/assets/image/common/icon/",
   link: [
     {
-      href: "https://zenn.dev/karakure178",
-      src: "zenn.svg",
-      alt: "zenn link",
+      href: "https://twitter.com/Plo2Ky",
+      src: "twitter.svg",
+      alt: "twitter link",
     },
     {
       href: "https://github.com/Karakure178/",
