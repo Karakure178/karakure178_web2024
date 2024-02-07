@@ -5,7 +5,7 @@ import Likes from "./Likes.vue";
 import Links from "./Links.vue";
 
 // ref使って別物として書かないとエラーを吐き続けたので分けた
-const myicon = ref("src/assets/image/top/about/myicon.png");
+const myicon = ref("assets/image/top/about/myicon.png");
 </script>
 
 <template>

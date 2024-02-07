@@ -1,5 +1,5 @@
 export const articlesData = {
-  commonUrl: "src/assets/image/common/icon/",
+  commonUrl: "assets/image/common/icon/",
   link: [
     {
       href: "https://zenn.dev/karakure178/articles/9fc0fb59b6577d",

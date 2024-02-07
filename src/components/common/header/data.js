@@ -1,5 +1,5 @@
 export const headerData = {
-  logoUrl: "src/assets/image/common/header/icon.svg",
+  logoUrl: "assets/image/common/header/icon.svg",
   navigationList: [
     {
       title: "Top",

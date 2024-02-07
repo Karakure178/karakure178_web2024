@@ -1,5 +1,5 @@
 export const linkData = {
-  commonUrl: "src/assets/image/common/icon/",
+  commonUrl: "assets/image/common/icon/",
   link: [
     {
       href: "https://twitter.com/Plo2Ky",
