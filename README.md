@@ -1,35 +1,22 @@
-# code
+# これは何？
+2023年度版ポートフォリオサイトのソースコードリポジトリです。
 
-This template should help get you started developing with Vue 3 in Vite.
+https://karakure178.com/
 
-## Recommended IDE Setup
+## 使用技術(メイン)
+- SCSS
+- Vue3
+- Gsap
+- moveto
+- Swiper
+- pinia
+- p5.js
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-## Customize configuration
+## 実行コマンド
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | 環境のインストール                            |
+| `npm ci`             | バージョンを固定してインストール                            |
+| `npm start`             | サーバーの立ち上げ：`localhost:3001`      |
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
