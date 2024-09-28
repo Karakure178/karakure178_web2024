@@ -19,4 +19,4 @@ https://karakure178.com/
 | `npm install`             | 環境のインストール                            |
 | `npm ci`             | バージョンを固定してインストール                            |
 | `npm start`             | サーバーの立ち上げ：`localhost:3001`      |
-
+| ` npx ncu -u --target patch`             | パッケージアップデート      |
